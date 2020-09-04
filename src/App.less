@@ -1,0 +1,188 @@
+@import '~antd/lib/style/themes/default';
+
+.classTags {
+  margin-bottom: 8px;
+
+  :global {
+    .ant-tag-checkable {
+      border-color: @border-color-base;
+      background-color: @tag-default-bg;
+
+      &-checked {
+        border-color: transparent;
+        background-color: @primary-color;
+      }
+    }
+  }
+}
+
+
+:global {
+  .selectModal {
+    .ant-modal-body{
+      display: flex;
+      padding: 0 24px;
+    }
+  }
+}
+  
+.treeContainer {
+  width: 50%;
+  border-right: 1px solid @border-color-base;
+}
+.selectedStudent {
+  width: 50%;
+  padding: 12px 0 12px 12px;
+  &Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    &Title{
+      color: #000;
+      font-size: 18px;
+    }
+  }
+}
+
+
+.classList {
+  line-height: @line-height-base;
+
+  .class {
+    margin-bottom: 16px;
+    border: 0;
+
+    &Header {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+
+      padding: 8px 16px;
+      background-color: #f4f4f4;
+      border-top-left-radius: @border-radius-base;
+      border-top-right-radius: @border-radius-base;
+
+      &Name {
+        margin-right: 16px;
+      }
+
+      &Actions {
+        margin-left: auto;
+
+        > * {
+          display: inline-block;
+          margin-left: 8px;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    &Content {
+      padding: 16px;
+      background-color: #f9f9f9;
+      border-bottom-left-radius: @border-radius-base;
+      border-bottom-right-radius: @border-radius-base;
+    }
+
+    .student {
+      text-align: center;
+      padding: 4px 0;
+      width: 76px;
+
+      &Name {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .emptyClass {
+    text-align: center;
+    color: @text-color-secondary;
+  }
+}
+
+.checkable {
+  outline: 0;
+  color: @text-color;
+
+  transition: all 140ms @ease-in-out;
+  cursor: pointer;
+
+  .checkableAvatar {
+    margin-bottom: 4px;
+    text-align: center;
+
+    &Wrapper {
+      display: inline-block;
+      position: relative;
+    }
+
+    &Overlay {
+      position: absolute;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+
+      color: @primary-color;
+      font-size: 1.2em;
+      background-color: fade(#fff, 50%);
+      border: 2px solid @primary-color;
+      border-radius: 100%;
+
+      transition: opacity 140ms @ease-in-out;
+    }
+  }
+
+  :global {
+    .ant-avatar {
+      border: @border-width-base @border-style-base transparent;
+      transition: 140ms @ease-in-out;
+      transition-property: border-color, box-shadow;
+    }
+  }
+
+  &.checkableChecked {
+    color: @link-color;
+
+    .checkableAvatar {
+      position: relative;
+
+      &Overlay {
+        opacity: 1;
+      }
+    }
+
+    :global {
+      .ant-avatar {
+        border-color: @input-hover-border-color;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+
+    :global {
+      .ant-avatar {
+        border-color: @input-hover-border-color;
+      }
+    }
+  }
+
+  &:active {
+    color: @link-active-color;
+  }
+}
