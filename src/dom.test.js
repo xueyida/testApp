@@ -1,5 +1,9 @@
+describe('my dom  test', () => {
 
-describe('my dom  show test', () => {
+			
+	function fntest(a){
+		return a+1;
+	}
 	test('dom click test', () => {
 
 
@@ -19,7 +23,15 @@ describe('my dom  show test', () => {
 
 			// console.log(document.getElementById('username').text);
 			
-			// expect(document.getElementById('username').text).toBe('abc');	
+			expect(document.getElementById('username').text).toBe('abc');	
 
-    });
+		});
+		
+			
+	test('function test', () => {
+		const res = fntest(2);
+		expect(res).toBe(3);
+	})
 });
+
+
