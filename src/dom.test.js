@@ -13,6 +13,10 @@ describe('my dom  show test', () => {
     
 			document.getElementById('button').click();
 
+			const mockFn = jest.fn();
+			console.log('******************');
+			console.log(mockFn())
+
 			// console.log(document.getElementById('username').text);
 			
 			// expect(document.getElementById('username').text).toBe('abc');	
