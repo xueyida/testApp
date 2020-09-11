@@ -11,8 +11,6 @@ test('works with async/await',  async () => {
 
 
 test('works with promise',  () => {
-  // expect.assertions(1);
-  // console.log(1111);
   user.getUserName(4).then(data => expect(data).toEqual('Mark'));
 
   return user.getUserName(4).then(data => expect(data).toEqual('Mark'));
